@@ -1,0 +1,3 @@
+You can use this to compile a SUID root shell that does not drop SUID privileges. For example, you can use this when you have code execution as root but cannot spawn a shell directly. Then, you can place the root\_shell binary as regular user in e.g. _/tmp_ and then execute _chown root:root /tmp/root\_shell; chmod +xs /tmp/root\_shell_ as root. Afterward, you can execute this as regular user to get a root shell.
+
+Btw., an easier alternative is to let the root user copy _/bin/bash_ to _/tmp_ and then let the user execute _chmod +xs /tmp/bash_. But this does not always work. Then, my root\_shell comes handy.
